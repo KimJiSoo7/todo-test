@@ -23,8 +23,9 @@ const Coin = styled.li`
   border-radius: 15px;
   margin-bottom: 10px;
   a {
+    display: flex;
+    align-items: center;
     transition: color 0.2s ease-in;
-    display: block;
     padding: 20px;
   }
   &:hover {
@@ -87,13 +88,11 @@ function Coins() {
         <CoinsList>
           {coins.map((item) => (
             <Coin key={item.id}>
-              <Link to={`/${item.id}`}>
-                <CoinWrapper>
-                  <Img
-                    src={`https://cryptoicon-api.vercel.app/api/icon/${item.symbol.toLocaleLowerCase()}`}
-                  />
-                  {item.name} &rarr;
-                </CoinWrapper>
+              <Link to={`/react-test/${item.id}`}>
+                <Img
+                  src={`https://cryptoicon-api.vercel.app/api/icon/${item.symbol.toLocaleLowerCase()}`}
+                />
+                {item.name} &rarr;
               </Link>
             </Coin>
           ))}
