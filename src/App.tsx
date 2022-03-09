@@ -1,8 +1,5 @@
-import { createGlobalStyle, ThemeProvider } from "styled-components";
-import Router from "./Router";
-import { ReactQueryDevtools } from "react-query/devtools";
-import { useState } from "react";
-import { darkTheme, lightTheme } from "./theme";
+import { createGlobalStyle } from "styled-components";
+import ToDoList from "./ToDoList";
 
 // Reset, global scope
 const GlobalStyle = createGlobalStyle`
@@ -71,16 +68,10 @@ a {
 `;
 
 function App() {
-  const [isDark, setIsDark] = useState(false);
-  const toggleDark = () => setIsDark((current) => !current);
   return (
     <>
-      <button onClick={toggleDark}>Toggle Mode</button>
-      <ThemeProvider theme={isDark ? darkTheme : lightTheme}>
-        <GlobalStyle />
-        <Router />
-        <ReactQueryDevtools initialIsOpen={true} />
-      </ThemeProvider>
+      <GlobalStyle />
+      <ToDoList />
     </>
   );
 }
