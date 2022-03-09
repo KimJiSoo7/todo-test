@@ -1,6 +1,6 @@
 {
   "homepage": "https://kimjisoo7.github.io/ToDo_Practice/",
-  "name": "crypto-tracker",
+  "name": "to-do",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
